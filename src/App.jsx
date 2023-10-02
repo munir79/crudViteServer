@@ -5,6 +5,8 @@ import Main from './Component/Main'
 import Registar from './Component/Registar'
 import Login from './Component/Login'
 
+import SeeUser from './Component/SeeUser'
+
 function App() {
   const router=createBrowserRouter([
     {
@@ -18,6 +20,11 @@ function App() {
         {
           path:'/login',
           element:<Login></Login>
+        },
+        {
+          path:'/user',
+          element:<SeeUser></SeeUser>,
+          loader:()=>fetch('http://localhost:5000/users')
         }
       ]
     }
